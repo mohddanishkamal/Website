@@ -9,6 +9,7 @@
     <style>
         :root {
             --bg-base: #FAF9F6; /* Soft Parchment */
+            --bg-footer: #F2F0ED; /* Refined Taupe-Grey */
             --text-main: #1C1C1C; /* Deep Charcoal */
             --text-muted: #666666;
             --accent: #8E795E; /* Muted Bronze */
@@ -64,46 +65,44 @@
 
         .nav-links a:hover { color: var(--accent); }
 
-        /* Hero: Dominant Persona */
+        /* Hero: Single-Line Bold Persona */
         .hero {
-            padding: 18vh 5% 12vh;
+            padding: 18vh 5% 10vh;
             text-align: center;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .hero h1 {
             font-family: var(--font-display);
-            font-size: clamp(4rem, 10vw, 7.5rem);
-            line-height: 0.85;
+            font-size: clamp(2.2rem, 5.5vw, 4.8rem); /* Adjusted for single-line fit */
+            line-height: 1.1;
             font-weight: 700;
-            margin-bottom: 2rem;
-            letter-spacing: -0.04em;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
             color: var(--text-main);
+            white-space: nowrap; 
         }
 
-        .hero h1 span { display: block; }
-
         .hero h1 i {
-            font-family: var(--font-display);
             font-style: italic;
             font-weight: 400;
             color: var(--accent);
             letter-spacing: -0.01em;
-            margin-right: 0.1em;
         }
 
         .hero-subtitle {
             font-family: var(--font-sans);
-            font-size: clamp(1rem, 1.2vw, 1.1rem);
+            font-size: clamp(0.85rem, 1.1vw, 1rem);
             color: var(--text-muted);
-            font-weight: 300;
+            font-weight: 400;
             line-height: 1.6;
             margin: 0 auto;
-            letter-spacing: 0.05em;
-            max-width: 600px;
+            letter-spacing: 0.1em;
+            max-width: 800px;
             border-top: 1px solid var(--border);
-            padding-top: 2rem;
+            padding-top: 1.2rem;
+            text-transform: uppercase;
         }
 
         /* Narrative Flow */
@@ -145,15 +144,20 @@
             color: var(--text-main);
         }
 
-        .content-body a.inline-link {
+        /* Blog Anchor Visibility */
+        .blog-anchor {
             color: var(--text-main);
             text-decoration: none;
-            border-bottom: 1px solid var(--accent);
-            transition: 0.3s;
+            font-weight: 600;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
         }
 
-        .content-body a.inline-link:hover {
+        .blog-anchor:hover {
             color: var(--accent);
+            background: rgba(142, 121, 94, 0.05);
+            border-bottom-color: var(--text-main);
         }
 
         /* Inkscribers Spotlight */
@@ -170,7 +174,7 @@
         .list-container {
             margin-top: 4rem;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
             text-align: left;
         }
@@ -182,12 +186,33 @@
 
         .list-item h4 {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 0.75rem;
             color: var(--accent);
         }
 
         .list-item p { font-size: 1rem; opacity: 0.7; line-height: 1.5; }
+
+        .action-btn {
+            display: inline-block;
+            margin-top: 3.5rem;
+            text-decoration: none;
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid var(--accent);
+            padding: 1rem 2.5rem;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .action-btn:hover { 
+            background: var(--accent);
+            color: #121212;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
 
         /* Modal Structure (Contact Pop-up) */
         .modal-overlay {
@@ -198,7 +223,7 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(8px);
-            display: none; /* Hidden by default */
+            display: none; 
             justify-content: center;
             align-items: center;
             z-index: 2000;
@@ -262,24 +287,21 @@
 
         .contact-item a:hover { border-bottom-color: var(--text-main); }
 
-        /* Footer: Streamlined */
+        /* Footer: Enhanced & Styled */
         footer {
             padding: 80px 5% 60px;
             text-align: center;
+            background-color: var(--bg-footer);
             border-top: 1px solid var(--border);
         }
 
         .footer-name {
             font-family: var(--font-display);
             font-size: 1.8rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             font-weight: 700;
             letter-spacing: -0.01em;
             font-style: italic;
-        }
-
-        .footer-nav {
-            margin-bottom: 2rem;
         }
 
         .footer-nav a {
@@ -290,26 +312,31 @@
             text-transform: uppercase;
             font-weight: 600;
             cursor: pointer;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
+            padding: 5px 15px;
+            border: 1px solid transparent;
         }
 
-        .footer-nav a:hover { color: var(--accent); }
+        .footer-nav a:hover { 
+            color: var(--text-main); 
+            border: 1px solid var(--accent);
+        }
 
         .copyright {
             font-size: 0.6rem;
             letter-spacing: 4px;
-            color: #999;
+            color: #888;
             text-transform: uppercase;
+            margin-top: 2.5rem;
         }
 
         /* Responsive Optimization */
         @media (max-width: 900px) {
             .hero { padding-top: 12vh; }
-            .hero h1 { font-size: 4.5rem; }
+            .hero h1 { font-size: 2.2rem; white-space: normal; } /* Allow wrap on very small screens */
             .nav-links { display: none; }
             .list-container { grid-template-columns: 1fr; }
             .section { padding: 80px 5%; }
-            .h-title { font-size: 2.4rem; }
             .modal-content { padding: 3rem 2rem; }
         }
     </style>
@@ -327,14 +354,9 @@
 </nav>
 
 <section class="hero">
-    <h1>
-        <span>Mohd</span> 
-        <i>Danish</i> 
-        <span>Kamal</span>
-    </h1>
+    <h1>Mohd <i>Danish</i> Kamal</h1>
     <p class="hero-subtitle">
-        Author &bull; Creative Strategist<br>
-        Founder of Inkscribers
+        Author &bull; Creative Strategist &bull; Founder of Inkscribers
     </p>
 </section>
 
@@ -354,7 +376,7 @@
         <h2 class="h-title">Literary Contributions</h2>
         <div class="content-body">
             <p>Formal entry into publishing was established with the debut book, <strong>Shadows of Last Thought</strong>, released worldwide on 24 November 2024. The work marked his transition into authorship with international availability.</p>
-            <p>Alongside this debut, the body of work includes short narratives, conceptual story writing, and ongoing written projects developed across multiple formats. The approach remains concept-driven, with an emphasis on idea formation, narrative direction, and structured storytelling. This exploration of the creative process is further documented through his <a href="https://inkscribers.blogspot.com/" target="_blank" class="inline-link">official blog</a>, where narrative insights are shared regularly.</p>
+            <p>Alongside this debut, the body of work includes short narratives, conceptual story writing, and ongoing written projects developed across multiple formats. The approach remains concept-driven, with an emphasis on idea formation, narrative direction, and structured storytelling. This exploration of the creative process is further documented through his <a href="https://inkscribers.blogspot.com/" target="_blank" class="blog-anchor">official blog</a>, where narrative insights and ongoing developments are shared regularly.</p>
         </div>
     </div>
 </section>
@@ -374,9 +396,15 @@
                 <h4>Supporting Debuts</h4>
                 <p>Focusing on enabling first-time creators to establish their presence and navigate early challenges.</p>
             </div>
+            <div class="list-item">
+                <h4>Creative Empowerment</h4>
+                <p>Championing a mission to bring work forward in an organized, practical, and impactful manner.</p>
+            </div>
         </div>
 
-        <p style="margin-top: 4rem; font-size: 1.15rem; opacity: 0.8;">The platform provides the practical manner needed to bring creative work forward in an organized and impactful way.</p>
+        <p style="margin-top: 4rem; font-size: 1.15rem; opacity: 0.8;">The platform provides the necessary guidance to transform creative projects into professional public releases.</p>
+        
+        <a href="https://inkscribers.netlify.app/" class="action-btn" target="_blank">Learn more about Inkscribers</a>
     </div>
 </section>
 
@@ -400,11 +428,9 @@
 
 <footer>
     <div class="footer-name">Mohd Danish Kamal</div>
-    
     <div class="footer-nav">
         <a id="openContact">Contact</a>
     </div>
-
     <p class="copyright">
         &copy; 2025 Mohd Danish Kamal. All Rights Reserved.
     </p>
@@ -436,3 +462,4 @@
 </body>
 </html>
 
+    
