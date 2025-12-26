@@ -30,7 +30,7 @@
 
         /* Navigation: Subdued Identity */
         nav {
-            padding: 2rem 5%;
+            padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -65,9 +65,9 @@
 
         .nav-links a:hover { color: var(--accent); }
 
-        /* Hero: Single-Line Bold Persona */
+        /* Hero: Bold, Dominant, Single-Line Name */
         .hero {
-            padding: 18vh 5% 10vh;
+            padding: 12vh 5% 6vh;
             text-align: center;
             max-width: 1400px;
             margin: 0 auto;
@@ -75,10 +75,10 @@
 
         .hero h1 {
             font-family: var(--font-display);
-            font-size: clamp(2.2rem, 5.5vw, 4.8rem); /* Adjusted for single-line fit */
-            line-height: 1.1;
+            font-size: clamp(2.2rem, 5.5vw, 4.8rem); 
+            line-height: 1;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem; /* Tight gap */
             letter-spacing: -0.01em;
             color: var(--text-main);
             white-space: nowrap; 
@@ -96,18 +96,18 @@
             font-size: clamp(0.85rem, 1.1vw, 1rem);
             color: var(--text-muted);
             font-weight: 400;
-            line-height: 1.6;
+            line-height: 1.4;
             margin: 0 auto;
             letter-spacing: 0.1em;
             max-width: 800px;
             border-top: 1px solid var(--border);
-            padding-top: 1.2rem;
+            padding-top: 0.8rem; /* Tight hierarchy */
             text-transform: uppercase;
         }
 
         /* Narrative Flow */
         .section {
-            padding: 100px 5%;
+            padding: 80px 5%;
             border-top: 1px solid var(--border);
         }
 
@@ -144,7 +144,7 @@
             color: var(--text-main);
         }
 
-        /* Blog Anchor Visibility */
+        /* Enhanced Blog Anchor Visibility */
         .blog-anchor {
             color: var(--text-main);
             text-decoration: none;
@@ -164,8 +164,8 @@
         .highlight-area {
             background-color: #121212;
             color: #FAF9F6;
-            padding: 120px 5%;
-            margin-top: 60px;
+            padding: 100px 5%;
+            margin-top: 40px;
         }
 
         .highlight-area .h-title { color: #fff; font-size: 3.2rem; }
@@ -287,9 +287,9 @@
 
         .contact-item a:hover { border-bottom-color: var(--text-main); }
 
-        /* Footer: Enhanced & Styled */
+        /* Footer: Streamlined & Minimal */
         footer {
-            padding: 80px 5% 60px;
+            padding: 60px 5% 40px;
             text-align: center;
             background-color: var(--bg-footer);
             border-top: 1px solid var(--border);
@@ -332,11 +332,11 @@
 
         /* Responsive Optimization */
         @media (max-width: 900px) {
-            .hero { padding-top: 12vh; }
-            .hero h1 { font-size: 2.2rem; white-space: normal; } /* Allow wrap on very small screens */
+            .hero { padding-top: 10vh; }
+            .hero h1 { font-size: 2.2rem; white-space: normal; }
             .nav-links { display: none; }
             .list-container { grid-template-columns: 1fr; }
-            .section { padding: 80px 5%; }
+            .section { padding: 60px 5%; }
             .modal-content { padding: 3rem 2rem; }
         }
     </style>
@@ -420,7 +420,7 @@
         </div>
 
         <div class="contact-item">
-            <label>Social</label>
+            <label>Social Identity</label>
             <a href="https://www.instagram.com/mohddanishkamal1?igsh=amN5ZzdkYzRkdDB4" target="_blank">@mohddanishkamal1</a>
         </div>
     </div>
@@ -462,4 +462,4 @@
 </body>
 </html>
 
-    
+        
