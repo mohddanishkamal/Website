@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohd Danish Kamal | Official Brand</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --brand-primary: #0A0A0A;
+            --brand-secondary: #4A4A4A;
+            --brand-bg: #FCFCFC;
+        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #111111;
+            background-color: var(--brand-bg);
+            color: var(--brand-primary);
         }
-        .font-display {
+        .font-serif {
             font-family: 'Cormorant Garamond', serif;
         }
-        /* Subtle Paper Texture Overlay */
+        /* Refined Texture Overlay */
         body::after {
             content: "";
             position: fixed;
@@ -25,143 +30,151 @@
             pointer-events: none;
             z-index: 9999;
         }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .hero-title {
+            line-height: 1.1;
+            letter-spacing: -0.02em;
         }
     </style>
 </head>
-<body class="antialiased selection:bg-stone-200">
+<body class="antialiased selection:bg-stone-100">
 
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-stone-100 px-6 py-4 md:px-12">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#" class="text-[0.8rem] font-bold uppercase tracking-[0.2em] text-black">Mohd Danish Kamal</a>
-            <div class="hidden md:flex space-x-10">
-                <a href="#background" class="text-[0.7rem] font-bold uppercase tracking-widest text-stone-400 hover:text-black transition-colors">Background</a>
-                <a href="#writing" class="text-[0.7rem] font-bold uppercase tracking-widest text-stone-400 hover:text-black transition-colors">Writing</a>
-                <a href="#inkscribers" class="text-[0.7rem] font-bold uppercase tracking-widest text-stone-400 hover:text-black transition-colors">Inkscribers</a>
+    <!-- Global Navigation -->
+    <nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-stone-100 px-6 py-5 md:px-16">
+        <div class="max-w-[1300px] mx-auto flex justify-between items-center">
+            <a href="#" class="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-black">Mohd Danish Kamal</a>
+            <div class="hidden md:flex items-center space-x-10">
+                <a href="#narrative" class="text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-stone-400 hover:text-black transition-colors">Background</a>
+                <a href="#inkscribers" class="text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-stone-400 hover:text-black transition-colors">Platform</a>
+                <button id="openPanelNav" class="text-[0.6rem] font-bold uppercase tracking-[0.2em] border border-black px-6 py-2 hover:bg-black hover:text-white transition-all rounded-sm">Connect</button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="max-w-6xl mx-auto px-6 pt-16 pb-2 md:px-12 md:pt-24">
-        <h1 class="font-display text-5xl md:text-8xl font-bold leading-[0.95] tracking-tighter text-black mb-4 whitespace-nowrap">
-            Mohd Danish Kamal
-        </h1>
-        <div class="pt-4 border-t border-stone-100">
-            <div class="flex items-center text-[0.7rem] md:text-[0.85rem] font-semibold uppercase tracking-[0.15em] text-[#91765A] whitespace-nowrap overflow-x-auto no-scrollbar">
-                <span>Author</span>
-                <span class="mx-3 text-stone-300 md:mx-4">·</span>
-                <span>Creative Strategist</span>
-                <span class="mx-3 text-stone-300 md:mx-4">·</span>
-                <span>Founder of Inkscribers</span>
+    <!-- [TEMPLATE 1: MINIMAL HERO] -->
+    <header class="max-w-[1300px] mx-auto px-6 pt-12 pb-6 md:px-16 md:pt-24">
+        <div class="space-y-4">
+            <h1 class="font-serif hero-title text-5xl md:text-[5.5rem] font-medium text-black">
+                Mohd Danish Kamal
+            </h1>
+            <div class="flex items-center text-[0.65rem] md:text-[0.8rem] font-medium uppercase tracking-[0.2em] text-stone-400 flex-wrap gap-y-2">
+                <span class="flex items-center">Author</span>
+                <span class="mx-3 opacity-30 text-stone-900">•</span>
+                <span class="flex items-center">Creative Strategist</span>
+                <span class="mx-3 opacity-30 text-stone-900">•</span>
+                <span class="flex items-center">Founder of Inkscribers</span>
             </div>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-6 md:px-12 pb-32">
-        
-        <!-- Section: Background -->
-        <section id="background" class="mt-12 md:mt-20 grid grid-cols-1 lg:grid-cols-12 gap-1 lg:gap-12">
-            <div class="lg:col-span-4">
-                <h2 class="text-xl font-bold text-black tracking-tight lg:sticky lg:top-32 uppercase text-[0.85rem] tracking-[0.15em]">Background</h2>
-            </div>
-            <div class="lg:col-span-8 mt-1 lg:mt-0">
-                <div class="text-lg md:text-xl text-stone-600 font-normal leading-relaxed space-y-6">
-                    <p>Mohd Danish Kamal is an Indian author and creative strategist based in Meerut, Uttar Pradesh. He completed his schooling at Meerut Public School, Meerut, and his graduation from NAS College, Meerut.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Writing & Work -->
-        <section id="writing" class="mt-20 md:mt-32 border-t border-stone-100 pt-12 md:pt-20 grid grid-cols-1 lg:grid-cols-12 gap-1 lg:gap-12">
-            <div class="lg:col-span-4">
-                <h2 class="text-xl font-bold text-black tracking-tight lg:sticky lg:top-32 uppercase text-[0.85rem] tracking-[0.15em]">Writing & Work</h2>
-            </div>
-            <div class="lg:col-span-8 mt-1 lg:mt-0">
-                <div class="text-lg md:text-xl text-stone-600 font-normal leading-relaxed space-y-6">
-                    <p>His writing includes the book Shadows of Last Thought and other works such as Pernia. He continues to write and maintain ongoing writing projects on his <a href="https://inkscribers.blogspot.com/" target="_blank" class="font-bold text-black border-b-2 border-[#91765A] pb-px hover:text-[#91765A] transition-colors">official blog</a>.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Inkscribers -->
-        <section id="inkscribers" class="mt-20 md:mt-32 border-t border-stone-100 pt-12 md:pt-20">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-2 lg:gap-12 items-start">
-                <div class="lg:col-span-4">
-                    <h2 class="text-xl font-bold text-black tracking-tight uppercase text-[0.85rem] tracking-[0.15em]">Inkscribers</h2>
-                </div>
-                <div class="lg:col-span-8 mt-1 lg:mt-0">
-                    <div class="text-lg md:text-xl text-stone-600 font-normal leading-relaxed space-y-8">
-                        <div class="space-y-6">
-                            <p>Alongside his creative work, Mohd Danish Kamal founded Inkscribers, a platform created to support new and first-time writers working toward their debut. The platform exists to provide structure and direction for individuals navigating the early stages of creative and publishing work.</p>
-                            <p>Inkscribers supports emerging voices as they move from initial ideas to completed work through an organized and practical framework.</p>
+    <main>
+        <!-- [TEMPLATE 2: CONTENT NARRATIVE] -->
+        <section id="narrative" class="max-w-[1300px] mx-auto px-6 md:px-16 pb-32">
+            <div class="border-t border-stone-100 pt-12 md:pt-16">
+                <div class="max-w-4xl">
+                    <div class="grid grid-cols-1 gap-12 md:gap-20">
+                        <!-- Background -->
+                        <div class="space-y-4">
+                            <h3 class="font-serif text-2xl md:text-3xl italic font-medium">Background</h3>
+                            <div class="text-lg md:text-xl text-stone-600 font-light leading-relaxed">
+                                <p>Mohd Danish Kamal is an Indian author and creative strategist based in Meerut, Uttar Pradesh. He completed his schooling at Meerut Public School, Meerut, and his graduation from NAS College, Meerut.</p>
+                            </div>
                         </div>
-                        
-                        <div class="pt-4">
-                            <a href="https://inkscribers.netlify.app/" target="_blank" class="inline-flex items-center justify-center px-10 py-4 font-bold text-white bg-black hover:bg-[#91765A] transition-all duration-300 shadow-lg">
-                                <span class="uppercase tracking-widest text-[0.7rem]">Learn more about Inkscribers</span>
-                            </a>
+
+                        <!-- Writing & Work -->
+                        <div class="space-y-4">
+                            <h3 class="font-serif text-2xl md:text-3xl italic font-medium">Writing & Work</h3>
+                            <div class="text-lg md:text-xl text-stone-600 font-light leading-relaxed space-y-6">
+                                <p>His writing includes the book Shadows of Last Thought and other works such as Pernia. He continues to write and maintain ongoing writing projects on his <a href="https://inkscribers.blogspot.com/" target="_blank" class="text-black border-b border-stone-200 hover:border-black transition-all">official blog</a>.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- [TEMPLATE 3: THE PLATFORM] -->
+        <section id="inkscribers" class="bg-[#0A0A0A] text-white py-24 md:py-40 px-6 md:px-16">
+            <div class="max-w-[1300px] mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                    <div class="lg:col-span-5">
+                        <h2 class="text-[0.65rem] font-bold text-stone-500 uppercase tracking-[0.4em]">The Platform</h2>
+                        <h3 class="font-serif text-5xl md:text-7xl mt-6 font-medium">Inkscribers</h3>
+                    </div>
+                    <div class="lg:col-span-7">
+                        <div class="text-lg md:text-2xl font-light leading-relaxed space-y-10 text-stone-400">
+                            <p>Alongside his creative work, Mohd Danish Kamal founded Inkscribers, a platform created to support new and first-time writers working toward their debut. The platform exists to provide structure and direction for individuals navigating the early stages of creative and publishing work.</p>
+                            <p>Inkscribers supports emerging voices as they move from initial ideas to completed work through an organized and practical framework.</p>
+                            
+                            <div class="pt-6">
+                                <a href="https://inkscribers.netlify.app/" target="_blank" class="inline-flex items-center justify-center px-10 py-4 text-[0.65rem] font-bold uppercase tracking-[0.2em] border border-white/20 hover:border-white transition-all rounded-sm">
+                                    Learn more about Inkscribers
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Subtle Slide-up Connect Panel -->
-    <div id="contactPanel" class="fixed bottom-8 right-8 z-[2000] w-72 bg-white border border-stone-200 p-8 shadow-2xl translate-y-[150%] transition-transform duration-500 ease-in-out">
-        <button id="closePanel" class="absolute top-4 right-4 text-stone-300 hover:text-black transition-colors">&times;</button>
-        <h3 class="font-display text-2xl font-bold mb-6">Connect</h3>
-        <div class="space-y-6">
-            <div class="group">
-                <label class="block text-[0.6rem] uppercase tracking-widest text-[#91765A] mb-1">Inquiries</label>
-                <a href="mailto:inkscribers1@gmail.com" class="text-sm font-medium text-stone-500 group-hover:text-black transition-colors">inkscribers1@gmail.com</a>
+    <!-- [TEMPLATE 4: CONNECT PANEL] -->
+    <div id="contactPanel" class="fixed inset-y-0 right-0 z-[10000] w-full md:w-[420px] bg-white border-l border-stone-100 p-10 md:p-14 shadow-[-30px_0_60px_rgba(0,0,0,0.03)] translate-x-full transition-transform duration-700 ease-in-out">
+        <button id="closePanel" class="absolute top-8 right-8 text-stone-300 hover:text-black transition-colors text-2xl font-light">&times;</button>
+        <h3 class="font-serif text-4xl font-medium mb-12">Connect</h3>
+        <div class="space-y-12">
+            <div>
+                <label class="block text-[0.55rem] uppercase tracking-[0.3em] text-stone-400 mb-4 font-bold">Inquiries</label>
+                <a href="mailto:inkscribers1@gmail.com" class="text-lg md:text-xl font-medium text-stone-800 hover:text-black transition-colors border-b border-stone-100 pb-2 block">inkscribers1@gmail.com</a>
             </div>
-            <div class="group">
-                <label class="block text-[0.6rem] uppercase tracking-widest text-[#91765A] mb-1">Social</label>
-                <a href="https://www.instagram.com/mohddanishkamal1?igsh=amN5ZzdkYzRkdDB4" target="_blank" class="text-sm font-medium text-stone-500 group-hover:text-black transition-colors">@mohddanishkamal1</a>
+            <div>
+                <label class="block text-[0.55rem] uppercase tracking-[0.3em] text-stone-400 mb-4 font-bold">Social Presence</label>
+                <a href="https://www.instagram.com/mohddanishkamal1?igsh=amN5ZzdkYzRkdDB4" target="_blank" class="text-lg md:text-xl font-medium text-stone-800 hover:text-black transition-colors border-b border-stone-100 pb-2 block">@mohddanishkamal1</a>
             </div>
+        </div>
+        <div class="mt-40 text-[0.5rem] uppercase tracking-[0.4em] text-stone-300">
+            Est. 2025 &bull; Mohd Danish Kamal
         </div>
     </div>
 
     <!-- Minimalist Footer -->
-    <footer class="bg-stone-50 border-t border-stone-100 py-16 px-6">
-        <div class="max-w-6xl mx-auto text-center">
-            <h4 class="font-display text-2xl font-bold mb-6 italic text-black">Mohd Danish Kamal</h4>
-            <div class="mb-10">
-                <button id="openPanel" class="text-[0.65rem] font-bold uppercase tracking-[0.25em] text-stone-400 border border-stone-200 px-10 py-3 hover:text-black hover:border-black transition-all">
+    <footer class="bg-white py-24 px-6 border-t border-stone-100">
+        <div class="max-w-[1300px] mx-auto text-center space-y-12">
+            <h4 class="font-serif text-3xl font-medium text-black italic">Mohd Danish Kamal</h4>
+            <div>
+                <button id="openPanel" class="px-10 py-3 text-[0.6rem] font-bold uppercase tracking-[0.3em] text-black border border-black hover:bg-black hover:text-white transition-all rounded-sm">
                     Connect
                 </button>
             </div>
-            <p class="text-[0.55rem] uppercase tracking-[0.4em] text-stone-400">
-                &copy; 2025 Mohd Danish Kamal. All Rights Reserved.
+            <p class="text-[0.5rem] uppercase tracking-[0.5em] text-stone-300">
+                &copy; 2025 Mohd Danish Kamal.
             </p>
         </div>
     </footer>
 
     <script>
-        const openBtn = document.getElementById('openPanel');
+        const openBtns = [document.getElementById('openPanel'), document.getElementById('openPanelNav')];
         const closeBtn = document.getElementById('closePanel');
         const panel = document.getElementById('contactPanel');
 
-        openBtn.addEventListener('click', () => {
-            panel.style.transform = 'translateY(0)';
+        openBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                panel.style.transform = 'translateX(0)';
+                document.body.style.overflow = 'hidden';
+            });
         });
 
         closeBtn.addEventListener('click', () => {
-            panel.style.transform = 'translateY(150%)';
+            panel.style.transform = 'translateX(100%)';
+            document.body.style.overflow = '';
         });
 
         document.addEventListener('mousedown', (e) => {
-            if (panel.style.transform === 'translateY(0px)' && !panel.contains(e.target) && e.target !== openBtn) {
-                panel.style.transform = 'translateY(150%)';
+            if (panel.style.transform === 'translateX(0px)' && !panel.contains(e.target) && !openBtns.some(b => b.contains(e.target))) {
+                panel.style.transform = 'translateX(100%)';
+                document.body.style.overflow = '';
             }
         });
     </script>
