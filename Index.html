@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohd Danish Kamal | Official Profile</title>
+    <!-- Premium Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,700;1,400&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #FAF9F6; /* Soft Parchment */
+            --text-main: #1C1C1C; /* Deep Charcoal */
+            --text-muted: #666666;
+            --accent: #8E795E; /* Muted Bronze */
+            --border: rgba(0,0,0,0.08);
+            --font-display: 'Cormorant Garamond', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation: Subdued Identity */
+        nav {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(250, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 400;
+            text-decoration: none;
+            color: var(--text-muted);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            margin-left: 2rem;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Hero: Dominant Persona */
+        .hero {
+            padding: 18vh 5% 12vh;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(4rem, 10vw, 7.5rem);
+            line-height: 0.85;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: -0.04em;
+            color: var(--text-main);
+        }
+
+        .hero h1 span { display: block; }
+
+        .hero h1 i {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-weight: 400;
+            color: var(--accent);
+            letter-spacing: -0.01em;
+            margin-right: 0.1em;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-sans);
+            font-size: clamp(1rem, 1.2vw, 1.1rem);
+            color: var(--text-muted);
+            font-weight: 300;
+            line-height: 1.6;
+            margin: 0 auto;
+            letter-spacing: 0.05em;
+            max-width: 600px;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+        }
+
+        /* Narrative Flow */
+        .section {
+            padding: 100px 5%;
+            border-top: 1px solid var(--border);
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            display: block;
+            font-weight: 700;
+        }
+
+        .h-title {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .content-body p {
+            font-size: 1.15rem;
+            margin-bottom: 1.8rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .content-body strong {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .content-body a.inline-link {
+            color: var(--text-main);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+            transition: 0.3s;
+        }
+
+        .content-body a.inline-link:hover {
+            color: var(--accent);
+        }
+
+        /* Inkscribers Spotlight */
+        .highlight-area {
+            background-color: #121212;
+            color: #FAF9F6;
+            padding: 120px 5%;
+            margin-top: 60px;
+        }
+
+        .highlight-area .h-title { color: #fff; font-size: 3.2rem; }
+        .highlight-area p { opacity: 0.85; font-weight: 300; font-size: 1.25rem; line-height: 1.6; }
+
+        .list-container {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            text-align: left;
+        }
+
+        .list-item {
+            padding-left: 25px;
+            border-left: 1px solid var(--accent);
+        }
+
+        .list-item h4 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--accent);
+        }
+
+        .list-item p { font-size: 1rem; opacity: 0.7; line-height: 1.5; }
+
+        /* Modal Structure (Contact Pop-up) */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: var(--bg-base);
+            padding: 4rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            border: 1px solid var(--border);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .modal-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            margin: 1.5rem 0;
+        }
+
+        .contact-item label {
+            display: block;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            font-size: 1.2rem;
+            color: var(--text-main);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+            transition: 0.3s;
+        }
+
+        .contact-item a:hover { border-bottom-color: var(--text-main); }
+
+        /* Footer: Streamlined */
+        footer {
+            padding: 80px 5% 60px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-name {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            font-style: italic;
+        }
+
+        .footer-nav {
+            margin-bottom: 2rem;
+        }
+
+        .footer-nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .footer-nav a:hover { color: var(--accent); }
+
+        .copyright {
+            font-size: 0.6rem;
+            letter-spacing: 4px;
+            color: #999;
+            text-transform: uppercase;
+        }
+
+        /* Responsive Optimization */
+        @media (max-width: 900px) {
+            .hero { padding-top: 12vh; }
+            .hero h1 { font-size: 4.5rem; }
+            .nav-links { display: none; }
+            .list-container { grid-template-columns: 1fr; }
+            .section { padding: 80px 5%; }
+            .h-title { font-size: 2.4rem; }
+            .modal-content { padding: 3rem 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#" class="nav-logo">Mohd Danish Kamal</a>
+    <div class="nav-links">
+        <a href="#background">Background</a>
+        <a href="#writing">Work</a>
+        <a href="#inkscribers">Inkscribers</a>
+        <a href="https://inkscribers.blogspot.com/" target="_blank">Blog</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>
+        <span>Mohd</span> 
+        <i>Danish</i> 
+        <span>Kamal</span>
+    </h1>
+    <p class="hero-subtitle">
+        Author &bull; Creative Strategist<br>
+        Founder of Inkscribers
+    </p>
+</section>
+
+<section class="section" id="background">
+    <div class="container">
+        <span class="label">Academic & Professional Background</span>
+        <div class="content-body">
+            <p><strong>Mohd Danish Kamal</strong> is an Indian author and creative strategist from Meerut, Uttar Pradesh. He completed his schooling at Meerut Public School, Meerut, and went on to pursue higher education with a sustained focus on writing, ideas, and content-led initiatives.</p>
+            <p>He completed his graduation from <strong>NAS College, Meerut</strong>, followed by a <strong>Master’s Degree from Jamia Hamdard University, New Delhi</strong>.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="writing">
+    <div class="container">
+        <span class="label">Writing & Professional Work</span>
+        <h2 class="h-title">Literary Contributions</h2>
+        <div class="content-body">
+            <p>Formal entry into publishing was established with the debut book, <strong>Shadows of Last Thought</strong>, released worldwide on 24 November 2024. The work marked his transition into authorship with international availability.</p>
+            <p>Alongside this debut, the body of work includes short narratives, conceptual story writing, and ongoing written projects developed across multiple formats. The approach remains concept-driven, with an emphasis on idea formation, narrative direction, and structured storytelling. This exploration of the creative process is further documented through his <a href="https://inkscribers.blogspot.com/" target="_blank" class="inline-link">official blog</a>, where narrative insights are shared regularly.</p>
+        </div>
+    </div>
+</section>
+
+<section class="highlight-area" id="inkscribers">
+    <div class="container" style="text-align: center;">
+        <span class="label" style="color: var(--accent);">Creative Vision</span>
+        <h2 class="h-title">Inkscribers Platform</h2>
+        <p>In parallel with his authorship, Kamal founded <strong>Inkscribers</strong>, a platform created to enable new and emerging voices to enter the creative and publishing space with clarity and direction.</p>
+        
+        <div class="list-container">
+            <div class="list-item">
+                <h4>Structured Process</h4>
+                <p>Designed to help individuals move from idea development to public release through a guided framework.</p>
+            </div>
+            <div class="list-item">
+                <h4>Supporting Debuts</h4>
+                <p>Focusing on enabling first-time creators to establish their presence and navigate early challenges.</p>
+            </div>
+        </div>
+
+        <p style="margin-top: 4rem; font-size: 1.15rem; opacity: 0.8;">The platform provides the practical manner needed to bring creative work forward in an organized and impactful way.</p>
+    </div>
+</section>
+
+<!-- Contact Modal -->
+<div class="modal-overlay" id="contactModal">
+    <div class="modal-content">
+        <button class="modal-close" id="closeModal">&times;</button>
+        <h2 class="modal-title">Connect</h2>
+        
+        <div class="contact-item">
+            <label>Inquiries</label>
+            <a href="mailto:inkscribers1@gmail.com">inkscribers1@gmail.com</a>
+        </div>
+
+        <div class="contact-item">
+            <label>Social</label>
+            <a href="https://www.instagram.com/mohddanishkamal1?igsh=amN5ZzdkYzRkdDB4" target="_blank">@mohddanishkamal1</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-name">Mohd Danish Kamal</div>
+    
+    <div class="footer-nav">
+        <a id="openContact">Contact</a>
+    </div>
+
+    <p class="copyright">
+        &copy; 2025 Mohd Danish Kamal. All Rights Reserved.
+    </p>
+</footer>
+
+<script>
+    const openContact = document.getElementById('openContact');
+    const closeContact = document.getElementById('closeModal');
+    const modal = document.getElementById('contactModal');
+
+    openContact.addEventListener('click', () => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; 
+    });
+
+    closeContact.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; 
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+</script>
+
+</body>
+</html>
+
