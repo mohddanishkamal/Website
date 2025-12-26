@@ -43,13 +43,8 @@
 
     <!-- Global Navigation -->
     <nav class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-stone-200 px-6 py-5 md:px-16">
-        <div class="max-w-[1300px] mx-auto flex justify-between items-center">
+        <div class="max-w-[1300px] mx-auto flex justify-start items-center">
             <a href="#" class="text-[0.7rem] font-bold uppercase tracking-[0.3em] text-black">Mohd Danish Kamal</a>
-            <div class="hidden md:flex items-center space-x-10">
-                <a href="#narrative" class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-stone-600 hover:text-black transition-colors">Background</a>
-                <a href="#inkscribers" class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-stone-600 hover:text-black transition-colors">Platform</a>
-                <button id="openPanelNav" class="text-[0.65rem] font-bold uppercase tracking-[0.2em] border-2 border-black px-6 py-2 hover:bg-black hover:text-white transition-all rounded-sm">Connect</button>
-            </div>
         </div>
     </nav>
 
@@ -60,6 +55,7 @@
                 Mohd Danish Kamal
             </h1>
             <div class="flex items-center text-[0.7rem] md:text-[0.85rem] font-bold uppercase tracking-[0.2em] text-stone-800 flex-wrap gap-y-2">
+                <span class="mx-0 mr-3 text-black font-black">•</span>
                 <span class="flex items-center">Author</span>
                 <span class="mx-3 text-black font-black">•</span>
                 <span class="flex items-center">Creative Strategist</span>
@@ -163,16 +159,8 @@
     </footer>
 
     <script>
-        const navOpenBtn = document.getElementById('openPanelNav');
         const closeBtn = document.getElementById('closePanel');
         const panel = document.getElementById('contactPanel');
-
-        if (navOpenBtn) {
-            navOpenBtn.addEventListener('click', () => {
-                panel.style.transform = 'translateX(0)';
-                document.body.style.overflow = 'hidden';
-            });
-        }
 
         closeBtn.addEventListener('click', () => {
             panel.style.transform = 'translateX(100%)';
@@ -180,7 +168,7 @@
         });
 
         document.addEventListener('mousedown', (e) => {
-            if (panel.style.transform === 'translateX(0px)' && !panel.contains(e.target) && (!navOpenBtn || !navOpenBtn.contains(e.target))) {
+            if (panel.style.transform === 'translateX(0px)' && !panel.contains(e.target)) {
                 panel.style.transform = 'translateX(100%)';
                 document.body.style.overflow = '';
             }
